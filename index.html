@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Active Object Detection with Knowledge Aggregation and Distillation from Large Models</title>
+  <title>3D Vision and Language Pretraining with Large-Scale Synthetic Data</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,19 +52,32 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Active Object Detection with Knowledge Aggregation and Distillation from Large Models</h1>
+            <h1 class="title is-1 publication-title">3D Vision and Language Pretraining with Large-Scale Synthetic Data</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://blog.idejie.com" target="_blank">Dejie Yang</a>,</span>
+                <a href="https://blog.idejie.com" target="_blank">Dejie Yang</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="http://www.csyangliu.com/" target="_blank">Yang Liu</a><sup>*</sup>
+                  Zhu Xu<sup>1</sup>,</span>
+                  <span class="author-block">
+                   Wentao Mo<sup>1</sup>,</span>
+                   <span class="author-block">
+                    Qingchao Chen<sup>2,3</sup>,</span>
+                    <span class="author-block">
+                      Siyuan Huang<sup>4</sup>,</span>
+                <span class="author-block">
+                  <a href="http://www.csyangliu.com/" target="_blank">Yang Liu</a><sup>1,3*</sup>
                 </span>
                 
                   </div>
-
+                  <br>
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"> Wangxuan Institute of Computer Technology, Peking University <br>CVPR2024</span>
+                    <span class="author-block"> <sup>1</sup>Wangxuan Institute of Computer Technology, Peking University 
+                      <br> <sup>2</sup>National Institute of Health Data Science, Peking University
+                      <br> <sup>3</sup>National Key Laboratory of General Artificial Intelligence, Peking University
+                      <br> <sup>4</sup>State Key Laboratory of General Artificial Intelligence, BIGAI
+                      <br>
+                      <br>IJCAI2024</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Author</small></span>
                   </div>
 
@@ -72,17 +85,17 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/abs/2405.12509" target="_blank"
+                        <a href="https://arxiv.org/abs/" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
-                        <span>Paper</span>
+                        <span>Paper(Coming Soon)</span>
                       </a>
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/KAD.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -90,11 +103,11 @@
                       </span>
                       <span>Slides</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/idejie/KAD" target="_blank"
+                    <a href="https://github.com/idejie/3Dsyn" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -125,12 +138,11 @@
 <!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
+    <div class="hero-body" style="text-align: center;">
       <img src="static/images/teaser.png" alt="MY ALT TEXT"/>
     
-      <h2 class="content has-text-justified">
-        <b>An example of state-change carrot.</b> Active objects detection (state change carrots) is difficult, as there are (1) visual changes can be subtle between the carrot undergoing state-change or not, and multiple distractors, (2) intra-class visual appearance variance for the carrot under state changes is large. To achieve accurate detection, we propose to construct triple priors to provide hints for the model, including semantic interaction priors, fine- grained visual priors, and spatial priors of active objects.
-      </h2>
+      <h2 class="content" style="text-align: center;">
+        <b>Advantages of our proposed dataset SynVL3D.</b></h2>
     </div>
   </div>
 </section>
@@ -144,8 +156,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Accurately detecting active objects undergoing state changes is essential for comprehending human interactions and facilitating decision-making. The existing methods for active object detection (AOD) primarily rely on visual appearance of the objects within input, such as changes in size, shape and relationship with hands. However, these visual changes can be subtle, posing challenges, particularly in scenarios with multiple distracting no-change instances of the same category. We observe that the state changes are often the result of an interaction being performed upon the object, thus propose to use informed priors about object related plausible interactions (including semantics and visual appearance) to provide more reliable cues for AOD. Specifically, we propose a knowledge aggregation procedure to integrate the aforementioned informed priors into oracle queries within the teacher decoder, offering more object affordance commonsense to locate the active object. To streamline the inference process and reduce extra knowledge inputs, we propose a knowledge distillation approach that encourages the student decoder to mimic the detection capabilities of the teacher decoder using the oracle query by replicating its predictions and attention. Our proposed framework achieves state-of-the-art performance on four datasets, namely Ego4D, Epic-Kitchens, MECCANO, and 100DOH, which demonstrates the effectiveness of our approach in improving AOD.
-                   </p>
+            3D Vision-Language Pre-training (3D-VLP) aims to provide a pre-train model which can bridge 3D scenes with natural language, which is an impor- tant technique for embodied intelligence. How- ever, current 3D-VLP datasets are hindered by limited scene-level diversity and insufficient fine- grained annotations (only 1.2K scenes and 280K textual annotations in ScanScribe), primarily due to the labor-intensive of collecting and annotating 3D scenes. To overcome these obstacles, we con- struct SynVL3D, a comprehensive synthetic scene- text corpus with 10K indoor scenes and 1M de- scriptions at object, view, and room levels, which has the advantages of diverse scene data, rich tex- tual descriptions, multi-grained 3D-text associa- tions, and low collection cost. Utilizing the rich annotations in SynVL3D, we pre-train a simple and unified Transformer for aligning 3D and language with multi-grained pretraining tasks. Moreover, we propose a synthetic-to-real domain adaptation in downstream task fine-tuning process to address the domain shift. Through extensive experiments, we verify the effectiveness of our model design by achieving state-of-the-art performance on down- stream tasks including visual grounding, dense cap- tioning, and question answering.
+           </p>
         </div>
       </div>
     </div>
@@ -160,12 +172,12 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Framework</h2>
-    <div class="hero-body">
+    <div class="hero-body" style="text-align: center;">
       <img src="static/images/frame.png" alt="MY ALT TEXT"/>
     
-      <h2 class="content has-text-justified">
-        <b>Proposed Architecture: Knowledge Aggregation and Distillation (KAD).</b>  Our KAD architecture comprises two distinct detectors: the Vision-Based Detector (highlighted in orange, detailed in Section 3.1) and the Knowledge-Enhanced Detector (emphasized in green, elaborated in Section 3.3). Knowledge and concepts related to active object categories are systematically gathered and consolidated within the Knowledge Aggregator (shown in gray and positioned at the lower left). Best view in color.</h2>
-    </div>
+      <h2 class="content has-text-justified" style="text-align: center;">
+        <b>The model architecture of our SynFormer3D.</b> The multi-modal encoder includes a 3D-object encoder, text encoder, and cross-modal fusion modules. Compared to previous pre-trained models, our SynFormer3D introduces more fine-grained auxiliary pre-training tasks, which include Object Relation Prediction , Multi-level and View-aggregated Region-Word Alignment.
+      </h2>
   </div>
 </section>
 <!-- End teaser video -->
@@ -178,33 +190,34 @@
     <h2 class="title is-3">Results</h2>
     <div class="hero-body" style="text-align: center;">
       <h2 class="content has-text-justified">
-        <b>1. Comparisons with other methods on Ego4D.</b> We bold the best results and underline the second best ones.
+        <b>1.Grounding accuracy (%) on Nr3D, Sr3D and ScanRefer.</b> The best and second-best results are in bold and underlined.
       </h2>
-      <img src="static/images/ego4d.png" alt="MY ALT TEXT" width="50%"/>
+      <img src="static/images/table2.png" alt="MY ALT TEXT" width="100%"/>
     
       
     </div>
     <div class="hero-body" style="text-align: center;">
       <h2 class="content has-text-justified">
-        <b>2. Comparisons with other methods on Epic-Kitchens.</b> We bold the best results and underline the second best ones.
+        <b>2. Dense Captioning results on Scan2Cap dataset.</b> “C” stands for “CIDEr”, “B-4” for “BLEU-4”, “M” for “METEOR”, and “R” for
+          “ROUGE”, respectively. “@0.25” and “@0.5” represent the 3D IoU between the predicted and annotated box. The best results are in bold and underlined.
       </h2>
-      <img src="static/images/epic.png" alt="MY ALT TEXT" width="50%"/>
+      <img src="static/images/table3.png" alt="MY ALT TEXT" width="100%"/>
     
       
     </div>
     <div class="hero-body" style="text-align: center;">
       <h2 class="content has-text-justified">
-        <b>3. Comparisons with other methods on MECCANO.</b> We bold the best results and underline the second best ones.
+        <b>3. Answer accuracy on ScanQA </b>using object proposals from Mask3D. Each entry denotes “test w/ object” and second-best results are in bold and underlined.
       </h2>
-      <img src="static/images/meccano.png" alt="MY ALT TEXT" width="50%"/>
+      <img src="static/images/table4.png" alt="MY ALT TEXT" width="100%"/>
     
       
     </div>
-    <div class="hero-body" style="text-align: center;">
+    <!-- <div class="hero-body" style="text-align: center;">
       <h2 class="content has-text-justified" style="text-align: center;">
         <b>4. Comparisons with other methods on 100DOH.</b> We bold the best results and underline the second best ones.
       </h2>
-      <img src="static/images/100DOH.png" alt="MY ALT TEXT" width="50%"/>
+      <img src="static/images/100DOH.png" alt="MY ALT TEXT" width="50%"/> -->
     
 
       <!-- Paper poster -->
